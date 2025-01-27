@@ -23,8 +23,13 @@ dependencies:
   intl: ^0.20.2
   url_launcher: ^6.3.1
   logger: ^2.5.0
+
+  # Splash Screen Dependency
   flutter_native_splash: ^2.4.4
+  # Onboarding Screen Dependency
   smooth_page_indicator: ^1.2.0+3
+
+
   connectivity_plus: ^6.1.2
   lottie: ^3.3.1
 
