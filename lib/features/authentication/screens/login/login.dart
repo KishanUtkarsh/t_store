@@ -4,7 +4,7 @@ import 'package:t_store/common/widgets/login_signup/form_divider.dart';
 import 'package:t_store/common/widgets/login_signup/social_buttons.dart';
 import 'package:t_store/utils/constants/text_strings.dart';
 
-import 'widgets/appbar_heading.dart';
+import 'widgets/app_heading.dart';
 import 'widgets/login_form.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -20,7 +20,7 @@ class LoginScreen extends StatelessWidget {
             children: [
               /// Logo , Title , Sub-title
 
-              const AppbarHeading(),
+              const AppHeading(),
 
               /// login Form
 
