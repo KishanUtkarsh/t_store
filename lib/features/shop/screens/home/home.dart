@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:t_store/features/shop/screens/home/widgets/home_appbar.dart';
 
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
 
@@ -8,19 +9,19 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: SingleChildScrollView(
 
         child: Column(
           children: [
-
             /// Header Contents
             TPrimaryHeaderContainer(
               child: Column(
                 children: [
+                  const THomeAppbar(),
 
                 ],
-            ),),
+              ),
+            ),
 
           ],
         ),

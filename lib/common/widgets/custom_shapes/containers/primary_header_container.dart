@@ -33,6 +33,7 @@ class TPrimaryHeaderContainer extends StatelessWidget {
                         backgroundColor: TColors.textWhite.withOpacity(0.1)
                     )
                 ),
+                child
 
                 /// Here we add the widgets for the primary header
 
