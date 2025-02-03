@@ -6,6 +6,7 @@ import 'package:t_store/features/shop/screens/profile/profile.dart';
 import 'package:t_store/features/shop/screens/store/store.dart';
 import 'package:t_store/features/shop/screens/wishlist/wishlist.dart';
 import 'package:t_store/utils/constants/colors.dart';
+import 'package:t_store/utils/formatters/color_converter.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
 class NavigationMenu extends StatelessWidget {
@@ -26,7 +27,7 @@ class NavigationMenu extends StatelessWidget {
           selectedIndex: controller.selectedIndex.value,
           onDestinationSelected: (index) => controller.selectedIndex.value = index,
           backgroundColor: dark? TColors.black: TColors.white,
-          indicatorColor: dark ? TColors.white.withOpacity(0.1) : TColors.black.withOpacity(0.1),
+          indicatorColor: dark ? TColors.white.withAlpha(TColorConverter.convertOpacityToAlpha(0.1)) : TColors.black.withAlpha(TColorConverter.convertOpacityToAlpha(0.1)),
 
           destinations: [
 

@@ -9,6 +9,7 @@ import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
+import '../../../../utils/formatters/color_converter.dart';
 import '../../custom_shapes/containers/rounded_container.dart';
 import '../../text/product_price_text.dart';
 
@@ -53,7 +54,7 @@ class TProductCardVertical extends StatelessWidget {
                     top: 12,
                     child: TRoundedContainer(
                       radius: TSizes.sm,
-                      backgroundColor: TColors.secondary.withOpacity(0.8),
+                      backgroundColor: TColors.secondary.withAlpha(TColorConverter.convertOpacityToAlpha(0.8)),
                       padding: const EdgeInsets.symmetric(
                           horizontal: TSizes.sm, vertical: TSizes.xs),
                       child: Text(

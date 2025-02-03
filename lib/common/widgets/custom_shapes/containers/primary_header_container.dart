@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../utils/constants/colors.dart';
+import '../../../../utils/formatters/color_converter.dart';
 import '../curved_edges/curved_edge_wigit.dart';
 import 'circular_container.dart';
 
@@ -23,14 +24,14 @@ class TPrimaryHeaderContainer extends StatelessWidget {
                   top: -150,
                   right: -250,
                   child: TCircularContainer(
-                      backgroundColor: TColors.textWhite.withOpacity(0.1)
+                      backgroundColor: TColors.textWhite.withAlpha(TColorConverter.convertOpacityToAlpha(0.1))
                   ),
                 ),
                 Positioned(
                     top: 100,
                     right: -300,
                     child: TCircularContainer(
-                        backgroundColor: TColors.textWhite.withOpacity(0.1)
+                        backgroundColor: TColors.textWhite.withAlpha(TColorConverter.convertOpacityToAlpha(0.1))
                     )
                 ),
                 child

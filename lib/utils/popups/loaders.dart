@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../constants/colors.dart';
+import '../formatters/color_converter.dart';
 import '../helpers/helper_functions.dart';
 
 class TLoaders {
@@ -19,7 +20,7 @@ class TLoaders {
           margin: const EdgeInsets.symmetric(horizontal: 30),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
-            color: THelperFunctions.isDarkMode(Get.context!) ? TColors.darkerGrey.withOpacity(0.9) : TColors.grey.withOpacity(0.9),
+            color: THelperFunctions.isDarkMode(Get.context!) ? TColors.darkerGrey.withAlpha(TColorConverter.convertOpacityToAlpha(0.9)) : TColors.grey.withAlpha(TColorConverter.convertOpacityToAlpha(0.9)),
           ),
           child: Center(child: Text(message, style: Theme.of(Get.context!).textTheme.labelLarge)),
         ),

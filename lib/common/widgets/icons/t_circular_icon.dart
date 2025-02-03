@@ -3,6 +3,7 @@ import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
 import '../../../utils/constants/colors.dart';
+import '../../../utils/formatters/color_converter.dart';
 
 class TCircularIcon extends StatelessWidget {
   const TCircularIcon(
@@ -31,8 +32,8 @@ class TCircularIcon extends StatelessWidget {
         color: backgroundColor != null
             ? backgroundColor!
             : dark
-                ? TColors.black.withOpacity(0.9)
-                : TColors.white.withOpacity(0.9),
+                ? TColors.black.withAlpha(TColorConverter.convertOpacityToAlpha(0.9))
+                : TColors.white.withAlpha(TColorConverter.convertOpacityToAlpha(0.9)),
       ),
       child: IconButton(
           onPressed: onPressed,
