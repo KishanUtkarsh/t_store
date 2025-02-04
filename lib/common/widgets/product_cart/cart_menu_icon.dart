@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:t_store/utils/helpers/helper_functions.dart';
 
 import '../../../utils/constants/colors.dart';
 
 class TCartCounterIcon extends StatelessWidget {
-  const TCartCounterIcon({super.key, required this.iconColor, required this.callback});
+  const TCartCounterIcon(
+      {super.key, this.iconColor, required this.callback});
 
-  final Color iconColor;
+  final Color? iconColor;
   final VoidCallback callback;
 
   @override
   Widget build(BuildContext context) {
+
+    final dark = THelperFunctions.isDarkMode(context);
     return Stack(
       children: [
         IconButton(
           onPressed: callback,
           icon: const Icon(Iconsax.shopping_bag),
-          color: iconColor,
+          color: iconColor ?? (dark ? TColors.white : TColors.dark),
         ),
         Positioned(
           right: 0,
@@ -30,9 +34,10 @@ class TCartCounterIcon extends StatelessWidget {
             child: Center(
               child: Text(
                 "2",
-                style: Theme.of(context).textTheme.labelLarge!.apply(color: TColors.white,
-                    fontSizeFactor: 0.8
-                ),
+                style: Theme.of(context)
+                    .textTheme
+                    .labelLarge!
+                    .apply(color: TColors.white, fontSizeFactor: 0.8),
               ),
             ),
           ),
