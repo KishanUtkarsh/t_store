@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:t_store/common/widgets/custom_shapes/containers/search_container.dart';
+import 'package:t_store/common/widgets/layouts/grid_layout.dart';
 import 'package:t_store/common/widgets/product_cart/cart_menu_icon.dart';
 import 'package:t_store/common/widgets/text/section_heading.dart';
+import 'package:t_store/common/widgets/text/t_brand_title_text_with_verified_icon.dart';
 import 'package:t_store/utils/constants/colors.dart';
+import 'package:t_store/utils/constants/enums.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
@@ -61,39 +64,59 @@ class StoreScreen extends StatelessWidget {
 
                         TSectionHeading(
                           title: 'Featured Brands',
-                          onPressed: (){},
+                          onPressed: () {},
                         ),
-                        const SizedBox(height: TSizes.spaceBtwItems / 1.5,),
+                        const SizedBox(
+                          height: TSizes.spaceBtwItems / 1.5,
+                        ),
 
-                        TRoundedContainer(
-                          padding: EdgeInsets.all(TSizes.sm),
-                          showBorder: true,
-                          backgroundColor: Colors.transparent,
-                          child: Row(
-                            children: [
-
-                              /// Icon
-
-                              TCircularImage(
-                                isNetworkImage: false,
-                                image: TImages.clothIcon,
+                        TGridLayout(
+                          itemCount: 4,
+                          mainAxisEvent: 88,
+                          itemBuilder: (_,index){
+                            return GestureDetector(
+                              onTap: (){},
+                              child: TRoundedContainer(
+                                padding: EdgeInsets.all(TSizes.sm),
+                                showBorder: true,
                                 backgroundColor: Colors.transparent,
-                                overlayColor: dark? TColors.white : TColors.black,
-                              )
-                            ],
-                          ),
-                        ),
+                                child: Row(
+                                  children: [
 
-                        const SizedBox(height: TSizes.spaceBtwItems / 2,),
+                                    /// Icon
 
-                        /// Text
+                                    Flexible(
+                                      child: TCircularImage(
+                                        isNetworkImage: false,
+                                        image: TImages.clothIcon,
+                                        backgroundColor: Colors.transparent,
+                                        overlayColor: dark? TColors.white : TColors.black,
+                                      ),
+                                    ),
 
-                        Column(
-                          children: [
+                                    const SizedBox(height: TSizes.spaceBtwItems / 2,),
 
-                          ],
+                                    /// Text
+
+                                    Flexible(
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          TBrandTitleWithVerifiedIcon(title: 'Nike' , brandTextSize: TextSizes.large,),
+                                          Text('256 products with high demands',
+                                            overflow: TextOverflow.ellipsis,
+                                            style: Theme.of(context).textTheme.labelMedium,
+                                          ),
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            );
+                          }
                         )
-
                       ],
                     ),
                   ),
@@ -103,8 +126,6 @@ class StoreScreen extends StatelessWidget {
             body: Container()));
   }
 }
-
-
 
 // SingleChildScrollView(
 // child: Column(

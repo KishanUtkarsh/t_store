@@ -4,7 +4,9 @@ import 'package:t_store/common/styles/shadows.dart';
 import 'package:t_store/common/widgets/icons/t_circular_icon.dart';
 import 'package:t_store/common/widgets/images/t_rounded_image.dart';
 import 'package:t_store/common/widgets/text/product_title.text.dart';
+import 'package:t_store/common/widgets/text/t_brand_title_text_with_verified_icon.dart';
 import 'package:t_store/utils/constants/colors.dart';
+import 'package:t_store/utils/constants/enums.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
@@ -88,32 +90,19 @@ class TProductCardVertical extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  TProductTitleText(
+                  const TProductTitleText(
                     title: 'Green Nike Air Shoes',
                     smallSize: true,
                   ),
                   const SizedBox(
                     height: TSizes.spaceBtwItems / 2,
                   ),
-                  Row(
-                    children: [
-                      Text(
-                        'Nike',
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                        style: Theme.of(context).textTheme.labelMedium,
-                      ),
-                      const SizedBox(
-                        width: TSizes.xs,
-                      ),
-                      const Icon(
-                        Iconsax.verify5,
-                        color: TColors.primary,
-                        size: TSizes.iconXs,
-                      )
-                    ],
-                  ),
 
+                  const TBrandTitleWithVerifiedIcon(
+                      title: 'Nike',
+                    maxLines: 1,
+                    brandTextSize: TextSizes.small,
+                  ),
 
                 ],
               ),
